@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  //jQuery
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f" crossorigin="anonymous"></script>
+  <title>Admin</title>
+</head>
+<body>
+  <ul>
+
+  </ul>
+  <form action="/admin" method="POST">
+    <input type="text" name="title">TITLE
+    <input type="text" name="image">IMAGE
+    <input type="text" name="desc">DESC
+    <input type="text" name="price">PRICE
+    <input type="submit" value="submit">
+  </form>
+
+  <script type="text/javascript">
+    $.get("/admin", function(data) {
+      for(const dt of data) {
+        $("ul").append(
+          `
+            <li>${dt.title}</li>
+          `
+        )
+      }
+    })
+  </script>
+</body>
+</html>
