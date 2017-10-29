@@ -61,7 +61,7 @@ let items = [
   },
   {
     id: 3,
-    title: "Finibus Bonorum et Malorum",
+    title: "Finibus Bonorum",
     image: "https://goo.gl/p5Yxii",
     desc: "At vero eos et accusamus et iusto odio dignissimos",
     price: "15.99"
@@ -70,7 +70,7 @@ let items = [
     id: 4,
     title: "Excepteur sint occaecat",
     image: "https://goo.gl/QKx3pA",
-    desc: "Quis nostrum exercitationem ullam corporis",
+    desc: "Quis nostrum exercitationem ullam",
     price: "4.99"
   },
   {
@@ -91,14 +91,14 @@ let items = [
     id: 7,
     title: "Et harum quidem",
     image: "https://goo.gl/6jLFeV",
-    desc: "Rerum facilis est et expedita distinctio",
+    desc: "Rerum facilis expedita distinctio",
     price: "11.99"
   },
   {
     id: 8,
     title: "Nam libero tempore",
     image: "https://goo.gl/uacKZu",
-    desc: "Cum soluta nobis est eligendi optio cumque",
+    desc: "Cum soluta eligendi optio cumque",
     price: "12.99"
   },
 ]

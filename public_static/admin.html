@@ -1,35 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  //jQuery
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <title>Admin</title>
+  <script type="text/javascript" src="lib/jQuery/jquery-3.2.1.js"></script>
+  <!-- <script src="lib/bootstrap/js/bootstrap.js"></script> -->
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="admin.css">
 </head>
+
 <body>
-  <ul>
+  <div id="body">
+    <div class="navbar navbar-dark">
+      <a class="navbar-brand my-0 mx-auto" href="#">MeegoShop Admin Panel</a>
+    </div>
 
-  </ul>
-  <form action="/admin" method="POST">
-    <input type="text" name="title">TITLE
-    <input type="text" name="image">IMAGE
-    <input type="text" name="desc">DESC
-    <input type="text" name="price">PRICE
-    <input type="submit" value="submit">
-  </form>
+    <div id="items-container" class="container-fluid">
+      <h1 class="text-muted hidden">Wow, such empty (:</h1>
+      <div id="items-list" class="d-flex flex-wrap justify-content-center">
+        <!-- <div class="item card">
+          <img id="item-img" class="card-img-top" src="https://goo.gl/fuSdoy" alt="">
+          <div class="card-body">
+            <h4 id="item-title" class="card-title">Card title</h4>
+            <p id="item-desc" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-outline-danger item-del">X</a>
+          </div>
+        </div> -->
+      </div>
+    </div>
 
-  <script type="text/javascript">
-    $.get("/admin", function(data) {
-      for(const dt of data) {
-        $("ul").append(
-          `
-            <li>${dt.title}</li>
-          `
-        )
-      }
-    })
-  </script>
+    <a class="text-white" data-toggle="collapse" href="#form-container" id="add-btn" aria-controls="collapseForm">&plus;</a>
+
+  </div>
+
+  <div id="form-container" class="hidden" aria-expanded="false" aria-controls="collapseForm">
+
+    <form id="add-item" class="p-5" action="/admin" method="POST">
+      <div id="close-btn">&times;</div>
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Lorem Ipsum" required>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label for="desc">Description</label>
+            <input type="text" class="form-control" id="desc" name="desc" placeholder="Dol Amor Sit Plaq lorem ipsum" required>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="image">Image Url</label>
+            <input type="text" class="form-control" id="image" name="image" placeholder="https://goo.gl/sB6Sn7" required>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-group">
+            <label for="desc">Price ($)</label>
+            <input type="text" class="form-control" id="price" name="price" placeholder="5.99" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-1 mx-auto">
+          <button id="submit" type="submit" class="btn btn-primary">Add New Item</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="admin.js"></script>
 </body>
+
 </html>
